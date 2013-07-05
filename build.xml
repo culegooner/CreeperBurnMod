@@ -1,12 +1,13 @@
 <?xml version="1.0" ?> 
-<project name="CreeperBurnMod" default="build">
+<project name="BuildMod" default="build">
 	
 	<property file="build.properties" prefix="build"/>
 	<property file="build_number.properties" prefix="build_number"/>
 	
 	<target name="clean">
 		<delete file="${build.dir.development}\forge\mcp\src\minecraft\mcmod.info" />
-		<delete dir="${build.dir.development}\forge\mcp\src\minecraft\mod\${build.release.mod.author}" />
+		<delete dir="${build.dir.development}\forge\mcp\src\minecraft\${build.release.mod.package}\${build.release.mod.author}" />
+		<delete dir="${build.dir.development}\forge\mcp\src\minecraft\${build.release.mod.package}" />
 		<delete dir="${build.dir.development}\reobf\minecraft" />
 	</target>
 	
@@ -55,9 +56,12 @@
 		
 		<!-- Build the jar -->
 		<mkdir dir="${build.dir.modsrc}\${build.release.mod.name}\${build.dir.release}\${build.release.minecraft.version}\${build.release.mod.version}" />
-		<jar destfile="${build.dir.modsrc}\${build.release.mod.name}\${build.dir.release}\${build.release.minecraft.version}\${build.release.mod.version}\${build.release.mod.name}-${build.release.mod.version}-${build_number.build_number}.jar">
+		<jar destfile="${build.dir.modsrc}\${build.release.mod.name}\${build.dir.release}\${build.release.minecraft.version}\${build.release.mod.version}\${build.release.mod.name}-${build.release.mod.version}-${build_number.build_number}.jar" duplicate="preserve" index="true" manifestencoding="UTF-8">
 			<fileset dir="${build.dir.development}\forge\mcp\src\minecraft\" includes="mcmod.info" />
 			<fileset dir="${build.dir.development}\forge\mcp\reobf\minecraft" />
+			<fileset dir="${build.dir.modsrc}\${build.release.mod.name}" includes="README.md" />
+			<fileset dir="${build.dir.modsrc}\${build.release.mod.name}" includes="COPYING" />
+			<fileset dir="${build.dir.modsrc}\${build.release.mod.name}" includes="COPYING.LESSER" />
 		</jar>
 		
 		<!-- Clean up the MCP source now that we are done -->
@@ -75,9 +79,12 @@
 		
 		<!-- Build the jar -->
 		<mkdir dir="${build.dir.modsrc}\${build.release.mod.name}\${build.dir.release}\${build.release.minecraft.version}\${build.release.mod.version}" />
-		<jar destfile="${build.dir.modsrc}\${build.release.mod.name}\${build.dir.release}\${build.release.minecraft.version}\${build.release.mod.version}\${build.release.mod.name}-${build.release.mod.version}-${build_number.build_number}.jar">
+		<jar destfile="${build.dir.modsrc}\${build.release.mod.name}\${build.dir.release}\${build.release.minecraft.version}\${build.release.mod.version}\${build.release.mod.name}-${build.release.mod.version}-${build_number.build_number}.jar" duplicate="preserve" index="true" manifestencoding="UTF-8">
 			<fileset dir="${build.dir.development}\forge\mcp\src\minecraft\" includes="mcmod.info" />
 			<fileset dir="${build.dir.development}\forge\mcp\reobf\minecraft" />
+			<fileset dir="${build.dir.modsrc}\${build.release.mod.name}" includes="README.md" />
+			<fileset dir="${build.dir.modsrc}\${build.release.mod.name}" includes="COPYING" />
+			<fileset dir="${build.dir.modsrc}\${build.release.mod.name}" includes="COPYING.LESSER" />
 		</jar>
 				
 		<!-- Clean up the MCP source now that we are done -->
