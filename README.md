@@ -3,6 +3,8 @@ CreeperBurnMod
 
 https://github.com/culegooner/CreeperBurnMod
 
+To download the binary click here https://github.com/culegooner/CreeperBurnMod/releases
+
 This minecraft 1.6.1 mod uses events to set creepers on fire when under direct sunlight.
 This is not a coremode, it doesn't modify any base classes. instead it triggers an event whenever a creeper is spawned and replaces them.
 
