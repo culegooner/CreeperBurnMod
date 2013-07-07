@@ -1,8 +1,10 @@
-package mod.culegooner;
+package mod.culegooner.CreeperBurnMod;
 
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+
+
 
 public class CreeperBurnModCreeper extends EntityCreeper {
 

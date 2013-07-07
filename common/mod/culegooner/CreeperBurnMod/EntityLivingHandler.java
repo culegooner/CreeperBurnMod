@@ -1,4 +1,4 @@
-package mod.culegooner;
+package mod.culegooner.CreeperBurnMod;
 
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraftforge.event.ForgeSubscribe;
